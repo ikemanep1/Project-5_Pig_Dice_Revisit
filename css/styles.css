@@ -1,0 +1,34 @@
+#buttons1 {
+  display: none;
+}
+#buttons2 {
+  display: none;
+}
+
+body {
+  background: radial-gradient(circle, #fd5047, #e1eacb, #0000ff);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.card {
+  text-align: center;
+  background-color: #d4d3d2;
+  border: 8px solid #f2be13;
+  height: 300px;
+  width: 200px;
+}
+
+.info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.newGame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
