@@ -1,4 +1,4 @@
-//---Business Logic
+//---Business Logic: These are the constructors, plus the randomizer logic. Everything builds off of this foundation.
 var player1 = new Player;
 var player2 = new Player;
 
@@ -6,7 +6,7 @@ var throwDice = function() {
   return Math.floor(6*Math.random())+1;
 }
 
-function Player(turn){
+function Player(turn) {
   this.roll = 0;
   this.tempScore = 0;
   this.totalScore = 0;
@@ -17,6 +17,8 @@ function Player(turn){
 $(document).ready(function() {
 
   //---Player 1 Controls
+
+  // These are the player control engines, they're pretty much clones of each other. On a roll of one, player1's buttons disappear, the temporary score is set to zero, and the turn passes. On any other roll, the tempscore is incremented by the dice roll. Players end their turn by "holding", which increases their total scores by the tempscore of that turn. This could certainly be refactored.
 
 $("button#playerRoll1").click(function(){
     var roll = throwDice();
@@ -36,10 +38,10 @@ $("button#playerRoll1").click(function(){
         alert("Player 1: Winner Winner Chicken Dinner!");
         $("#rollOutcome1").text(player1.roll = 0);
         $("#turnScore1").text(player1.tempScore = 0);
-        $("#playerScore1").text(player1.totalScore = 0);
+        $(".playerScore1").text(player1.totalScore = 0);
         $("#rollOutcome2").text(player2.roll = 0);
         $("#turnScore2").text(player2.tempScore = 0);
-        $("#playerScore2").text(player2.totalScore = 0);
+        $(".playerScore2").text(player2.totalScore = 0);
         $("#buttons1").toggle();
         $("#buttons2").hide();
       }
@@ -48,7 +50,7 @@ $("button#playerRoll1").click(function(){
 
   $("button#playerHold1").click(function(){
     player1.totalScore += player1.tempScore;
-    $("#playerScore1").text(player1.totalScore);
+    $(".playerScore1").text(player1.totalScore);
     alert("Your turn is over! Player 2's turn!");
     player1.tempScore = 0;
     $("#turnScore1").text(player1.tempScore);
@@ -78,10 +80,10 @@ $("button#playerRoll1").click(function(){
         alert("Player 2: Winner Winner Chicken Dinner!");
         $("#rollOutcome1").text(player1.roll = 0);
         $("#turnScore1").text(player1.tempScore = 0);
-        $("#playerScore1").text(player1.totalScore = 0);
+        $(".playerScore1").text(player1.totalScore = 0);
         $("#rollOutcome2").text(player2.roll = 0);
         $("#turnScore2").text(player2.tempScore = 0);
-        $("#playerScore2").text(player2.totalScore = 0);
+        $(".playerScore2").text(player2.totalScore = 0);
         $("#buttons1").toggle();
         $("#buttons2").hide();
       }
@@ -90,7 +92,7 @@ $("button#playerRoll1").click(function(){
 
   $("button#playerHold2").click(function(){
     player2.totalScore += player2.tempScore;
-    $("#playerScore2").text(player2.totalScore);
+    $(".playerScore2").text(player2.totalScore);
     alert("Your turn is over! Player 1's turn!");
     player2.tempScore = 0;
     $("#turnScore2").text(player2.tempScore);
@@ -99,15 +101,15 @@ $("button#playerRoll1").click(function(){
     $("#buttons2").hide();
     console.log(player2);
   });
-  //---New Game Button
+  //---New Game Button: this sets all of the scores in the constructor to zero.
 
   $("button#newGame").click(function(){
     $("#rollOutcome1").text(player1.roll = 0);
     $("#turnScore1").text(player1.tempScore = 0);
-    $("#playerScore1").text(player1.totalScore = 0);
+    $(".playerScore1").text(player1.totalScore = 0);
     $("#rollOutcome2").text(player2.roll = 0);
     $("#turnScore2").text(player2.tempScore = 0);
-    $("#playerScore2").text(player2.totalScore = 0);
+    $(".playerScore2").text(player2.totalScore = 0);
     $("#buttons1").toggle();
     $("#buttons2").hide();
     console.log();
