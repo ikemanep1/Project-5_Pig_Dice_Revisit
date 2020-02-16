@@ -6,34 +6,51 @@
 }
 
 body {
-  background-color: #003300;
-  text-align: center;
+  background: radial-gradient(#ff0000, #ffffff, #000066);
+  height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h1 {
+.intro {
   text-align: center;
   margin-top: 50px;
-  background-color: #494741;
+  background-color: #660000;
   border: 3px solid #ff9900;
   color: #ffff00;
-  margin: 100px;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
+  padding-bottom: 10px;
+  border-radius: 20px;
 }
 
-.col-md-6 {
+.intro button {
+  background-color: #000000;
+}
+
+.flexbox-container {
+  display: flex;
+}
+
+.flexbox-item-1 {
   text-align: center;
-  border: 8px solid #f2be13;
   height: 300px;
-  width: 200px;
-  align-items: center;
-  margin-left: 220px;
-  margin-right: 250px;
+  width: 20%;
   border: 3px solid #ff9900;
   padding: 4px;
   color: #ffff00;
-  background-color: #494741;
+  background-color: #660000;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20%;
+  justify-content: center;
+  border-radius: 20px;
 }
-.col-md-6 button {
-  color: #000000;
+.flexbox-item-1 button {
+  color: #ffff00;
+  background-color: #000000;
 }
 
 .rolls {
